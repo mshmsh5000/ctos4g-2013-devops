@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+
+    <title>CTOs For Good: DevOps Session</title>
+
+    <meta name="description" content="A DevOps session from the 2013 CTOs For Good unconference, September 23-24, NYC" />
+    <meta name="author" content="mholford@dosomething.org" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <link rel="stylesheet" href="css/reveal.min.css" />
+    <link rel="stylesheet" href="css/theme/ds.css" id="theme" />
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css" />
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+      document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print" />' );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+      
+        <section>
+          <h1>CTOs FOR GOOD 2013</h1>
+        </section>
+        
+        <section>
+          <p><a href="bit.ly/1bCHYd0">
+            need link</a></p>
+        </section>
+
+        <section>
+          <h2>DevOps</h2>
+          <ul>
+            <li>Matt Holford (<a href="http://www.twitter.com/mshmsh5000">@mshmsh5000</a>)</li>
+            <li>/thanks Desmond Morris (<a href="http://www.twitter.com/desmondmorris">@desmondmorris</a>)</li>
+            <li><a href="http://www.dosomething.org">www.dosomething.org</a></li>
+          </ul>
+        </section>
+        
+        <section>
+          <ul class="toc">
+            <li>About Us</li>
+            <li>Snapshot: A Year Ago</li>
+            <li>The Way: Flow & Systems</li>
+            <li>The Way: Feedback</li>
+            <li>The Way: Resilience &amp; Experimentation</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>About Us</h2>
+
+          <ul>
+            <li>DoSomething.org: Largest network for young <br />people &amp; social change</li>
+            <li>Members: 2.3 million (aged 13-25)</li>
+            <li>Platform: Drupal &amp; co. (RoR, Flask, et al.)</li>
+            <li>A mostly LAMP-y stack</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Do Something: A year ago</h2>
+
+          <ul>
+            <li>Big old slow-ass Drupal site</li>
+            <li>Frustration</li>
+            <li>Technical debt</li>
+            <li>Loose (missing?) process</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Problem: Outsourced development</h2>
+
+          <ul>
+            <li>Black-box products thrown &ldquo;over the wall&rdquo;</li>
+            <li>Weak internal project management</li>
+            <li>Less institutional knowledge &rarr; more technical debt</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Problem: Loose dev &amp; deploy workflow</h2>
+
+          <img src="https://i.chzbgr.com/maxW500/6578117120/h7BED5FE4/" />
+        </section>
+
+        <section>
+          <h2>Problem: Unhappy developers</h2>
+
+          <ul>
+            <li><q>&ldquo;90% of my time wrestling with the platform&rdquo;</q></li>
+            <li>Technical debt &rarr; Unhappiness</li>
+            <li>No way to attract talent!</li>
+            <li>No way to <em>retain</em> talent!</li>
+          </ul>
+        </section>
+        
+        <section>
+          <h2>Problem: No automated tests</h2>
+        </section>
+        
+        <section>
+          <h2>Problems we don't have</h2>
+          
+          <ul>
+            <li>High traffic</li>
+            <li>Financial transactions</li>
+            <li>COPPA or PCI compliance</li>
+            <li>Massive infrastructure</li>
+            <li>Complex deployments</li>
+          </ul>
+        </section>
+        
+        <section>
+          <h2>DevOps?</h2>
+          
+          <p>(Easy: no ops!)</p>
+        </section>
+
+        
+        
+        <!-- THE WAY PART 1: FLOW -->
+
+        <section>
+          <h1>The 1st Way: Flow</h1>
+        </section>
+        
+        <section>
+          <h3>The Goals: Bandwidth, understanding, control</h3>
+          <h3>The Enemy: Unplanned work</h3>
+        </section>
+
+        <section>
+          <h2>Flow: Process</h2>
+          
+          <ul>
+            <li class="current">Get It In Writing (or Drawing)</li>
+            <li>Trello</li>
+            <li>Sprint Planning</li>
+          </ul>
+          
+        </section>
+        
+        <section>
+          <img src="images/product-design-process.png" />
+        </section>
+        
+        <section>
+          <h2>Flow: Process</h2>
+          
+          <ul>
+            <li>Get It In Writing (or Drawing)</li>
+            <li class="current">Trello</li>
+            <li>Sprint Planning</li>
+          </ul>
+          
+        </section>
+        
+        <section>
+          <img src="images/trello.png" />
+        </section>
+        
+        <section>
+          <img src="images/trello-org.png" />
+        </section>
+        
+        <section>
+          <img src="images/trello-party.png" />
+        </section>
+        
+        <section>
+          <h3>Missing from Trello</h3>
+          
+          <ul>
+            <li>Dashboard visualizations</li>
+            <li>Time tracking</li>
+            <li>Workflow rules/enforcement</li>
+            <li>Ticket numbers</li>
+          </ul>
+        </section>
+        
+        <section>
+          <h2>Flow: Process</h2>
+          
+          <ul>
+            <li>Get It In Writing (or Drawing)</li>
+            <li>Trello</li>
+            <li class="current">Sprint Planning</li>
+          </ul>
+          
+        </section>
+        
+        <section>
+          <img src="images/sprint-planning.png" />
+        </section>
+        
+        <section>
+          <h2>Flow: Deploying to prod</h2>
+        </section>
+        
+        <section>
+          <h2>Step 1: Talk to @george</h2>
+        </section>
+        
+        <section>
+          <img src="images/hubot-deploy.png" />
+        </section>
+        
+        <section>
+          <h2>Step 2: Jenkins in production</h2>
+        </section>
+        
+        <section>
+          <img src="images/deploy-2.png" />
+        </section>
+        
+        <section>
+          <h2>Step 3: Jenkins runs tests</h2>
+        </section>
+        
+        <section>
+          <img src="images/deploy-3.png" />
+        </section>
+        
+        <section>
+          <h2>Step 4: Fabric</h2>
+        </section>
+        
+        <section>
+          <img src="images/deploy-4.png" />
+        </section>
+        
+        
+        
+        <!-- THE WAY PART 2: FEEDBACK -->
+        
+        <section>
+          <h1>The 2nd Way: Feedback</h1>
+        </section>
+        
+        <section>
+          <h3>The Goals: Process improvement, short feedback loops</h3>
+          <h3>The Enemy: Silos of knowledge/information</h3>
+        </section>
+        
+        <section>
+                  <h2>Feedback: Culture</h2>
+                  
+                  <h3>Continuous improvement</h3>
+                  
+                  <p>Working on work vs. doing more work</p>
+        </section>
+        
+        <section>
+                  <h2>Feedback: Tools</h2>
+                  
+                  <ul>
+                    <li class="current">All the Shiny Tools</li>
+                    <li>GitHub</li>
+                    <li>HipChat</li>
+                    <li>Hubot</li>
+                    <li>Jenkins</li>
+                    <li>Wercker</li>
+                  </ul>
+          
+        </section>
+        
+        <section>
+                  <h2>Feedback: Tools</h2>
+                  
+                  <ul>
+                    <li>All the Shiny Tools</li>
+                    <li class="current">GitHub</li>
+                    <li>HipChat</li>
+                    <li>Hubot</li>
+                    <li>Jenkins</li>
+                    <li>Wercker</li>
+                  </ul>
+          
+        </section>
+        
+        <section>
+                  <img src="images/github-1.png" />
+        </section>
+        
+        <section>
+                  <img src="images/github-2.png" />
+        </section>
+        
+        <section>
+          <h3>GitHub: Wishlist</h3>
+          
+          <p>Feature branch-based QA instances on RackSpace Private Cloud / OpenStack</p>
+        </section>
+        
+        <section>
+                  <h2>Feedback: Tools</h2>
+                  
+                  <ul>
+                    <li>All the Shiny Tools</li>
+                    <li>GitHub</li>
+                    <li class="current">HipChat</li>
+                    <li>Hubot</li>
+                    <li>Jenkins</li>
+                    <li>Wercker</li>
+                  </ul>
+          
+        </section>
+        
+        <section>
+          <img src="images/hipchat-1.png" />
+        </section>
+        
+        <section>
+          <img src="images/hipchat-2.png" />
+        </section>
+        
+        <section>
+                  <h2>Feedback: Tools</h2>
+                  
+                  <ul>
+                    <li>All the Shiny Tools</li>
+                    <li>GitHub</li>
+                    <li>HipChat</li>
+                    <li class="current">Hubot</li>
+                    <li>Jenkins</li>
+                    <li>Wercker</li>
+                  </ul>
+          
+        </section>
+        
+        <section>
+          <img src="images/hubot.png" />
+        </section>
+        
+        <section>
+          <img src="images/hubot-scripts.png" />
+        </section>
+        
+        <section>
+          <img src="images/hubot-deploy.png" />
+        </section>
+        
+        <section>
+          <img src="images/oliver-mustache.png" />
+        </section>
+        
+        <section>
+          <img src="images/shake-cam.png" />
+        </section>
+        
+        <section>
+          <h2>Feedback: Tools</h2>
+          
+          <ul>
+            <li>All the Shiny Tools</li>
+            <li>GitHub</li>
+            <li>HipChat</li>
+            <li>Hubot</li>
+            <li class="current">Jenkins</li>
+            <li>Wercker</li>
+          </ul>
+          
+        </section>
+        
+        <section>
+          <img src="images/jenkins.png" />
+        </section>
+        
+        <section>
+          <h2>Feedback: Tools</h2>
+          
+          <ul>
+            <li>All the Shiny Tools</li>
+            <li>GitHub</li>
+            <li>HipChat</li>
+            <li>Hubot</li>
+            <li>Jenkins</li>
+            <li class="current">Wercker</li>
+          </ul>
+          
+        </section>
+        
+        <section>
+          <img src="images/wercker.png" />
+        </section>
+        
+        <section>
+          <h2>Feedback: Testing</h2>
+          
+          <ul>
+            <li class="current">LAMP: Behat</li>
+            <li>Drupal: SimpleTest</li>
+            <li>RoR: rspec, Cucumber</li>
+          </ul>
+        </section>
+        
+        <section>
+          <img src="images/behat-1.png" />
+        </section>
+        
+        <section>
+          <img src="images/behat-2.png" />
+        </section>
+        
+        <section>
+          <h2>Feedback: Testing</h2>
+          
+          <ul>
+            <li>LAMP: Behat</li>
+            <li class="current">Drupal: SimpleTest</li>
+            <li>RoR: rspec, Cucumber</li>
+          </ul>
+        </section>
+        
+        <section>
+          <img src="images/simpletest.png" />
+        </section>
+        
+        <section>
+          <h2>Feedback: Testing</h2>
+          
+          <ul>
+            <li>LAMP: Behat</li>
+            <li>Drupal: SimpleTest</li>
+            <li class="current">RoR: rspec, Cucumber</li>
+          </ul>
+        </section>
+        
+        
+        <!-- THE WAY PART 3: RESILIENCE & EXPERIMENTATION -->
+        
+        <section>
+          <h1>The 3rd Way: Resilience &amp; Experimentation</h1>
+        </section>
+        
+        <section>
+          <h2>...Ask me next year</h2>
+        </section>
+        
+        <section>
+          <h2>Plug: The Phoenix Project</h2>
+          
+          <p><a href="http://itrevolution.com/books/phoenix-project-devops-book/">
+            itrevolution.com/books/phoenix-project-devops-book/</a></p>
+            
+          <img src="images/phoenix-project.png" />
+        </section>
+
+        <section>
+          <h1>Thanks!</h1>
+          <ul>
+            <li>Matt Holford (<a href="http://www.twitter.com/mshmsh5000">@mshmsh5000</a>)</li>
+            <li><a href="http://www.dosomething.org">www.dosomething.org</a></li>
+          </ul>
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: false,
+        progress: false,
+        center: true,
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>

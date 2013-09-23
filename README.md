@@ -1,4 +1,10 @@
-ctos4g-2013-devops
-==================
+### CTOs For Good: Unconference 2013: DevOps
 
-DevOps session at 2013 CTOs For Good unconference.
+By Matt Holford of DoSomething.org
+
+**Outline**
+* About Us
+* Snapshot: A Year Ago
+* The Way: Flow & Systems
+* The Way: Feedback
+* The Way: Resilience & Experimentation
